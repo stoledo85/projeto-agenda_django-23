@@ -9,6 +9,8 @@ class Contato(models.Model):
     email = models.EmailField(max_length=254, blank=True)
     criado = models.DateTimeField(default=timezone.now)
     desc = models.TextField(blank=True)
-    
+    mostrar = models.BooleanField(default=False)
+    imagem = models.ImageField(blank=True, upload_to="imagens/%Y/%m/")
+
     def __str__(self) -> str:
-        return f'{self.nome} {self.sobrenome}'
+        return f"{self.nome} {self.sobrenome}"
