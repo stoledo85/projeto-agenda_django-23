@@ -4,7 +4,7 @@ from contato import models
 
 @admin.register(models.Categoria)
 class Categoria(admin.ModelAdmin):
-    list_display = "nome"
+    list_display = "nome",
 
 
 @admin.register(models.Contato)
