@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from contato.models import Contato
 
 
 def index(request):
-    return render(request, "contato/index.html")
+    contato = Contato.objects.filter(mostrar=True)
+    contexto = {
+        "contatos": contato,
+    }
+    return render(request, "contato/index.html", contexto)

@@ -21,7 +21,7 @@ class Contato(models.Model):
     email = models.EmailField(max_length=254, blank=True)
     criado = models.DateTimeField(default=timezone.now)
     desc = models.TextField(blank=True)
-    mostrar = models.BooleanField(default=False)
+    mostrar = models.BooleanField(default=True)
     imagem = models.ImageField(blank=True, upload_to="imagens/%Y/%m/")
     categoria = models.ForeignKey(
         Categoria, on_delete=models.SET_NULL, blank=True, null=True
